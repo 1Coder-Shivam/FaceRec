@@ -30,7 +30,6 @@ import android.util.Size
 import android.view.View
 import android.view.WindowInsets
 import android.widget.TextView
-import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
@@ -52,6 +51,8 @@ import java.util.concurrent.Executors
 
 
 class MainActivity : AppCompatActivity() {
+
+//    Main
 
     private var isSerializedDataStored = false
 
@@ -102,6 +103,14 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        var extras = intent.extras
+
+        if (extras != null) {
+            val value = extras!!.getString("key")
+            handeler.setDirectory(value)
+            //The key argument here must match that used in the other activity
+        }
+
 
         // Remove the status bar to have a full screen experience
         // See this answer on SO -> https://stackoverflow.com/a/68152688/10878733

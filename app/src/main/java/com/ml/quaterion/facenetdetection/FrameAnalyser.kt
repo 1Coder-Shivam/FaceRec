@@ -45,7 +45,7 @@ class FrameAnalyser( context: Context ,
                      private var boundingBoxOverlay: BoundingBoxOverlay ,
                      private var model: FaceNetModel
                      ) : ImageAnalysis.Analyzer {
-    val set: MutableSet<String> = HashSet()
+    val set: MutableSet<String> = handeler.fetchData()
 
     private val realTimeOpts = FaceDetectorOptions.Builder()
             .setPerformanceMode( FaceDetectorOptions.PERFORMANCE_MODE_FAST )

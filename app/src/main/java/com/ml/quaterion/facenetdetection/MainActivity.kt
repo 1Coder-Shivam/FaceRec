@@ -56,6 +56,7 @@ class MainActivity : AppCompatActivity() {
 
     private var isSerializedDataStored = false
 
+
     // Serialized data will be stored ( in app's private storage ) with this filename.
     private val SERIALIZED_DATA_FILENAME = "image_data"
 
@@ -75,6 +76,7 @@ class MainActivity : AppCompatActivity() {
     // Use the device's GPU to perform faster computations.
     // Refer https://www.tensorflow.org/lite/performance/gpu
     private val useGpu = true
+
 
     // Use XNNPack to accelerate inference.
     // Refer https://blog.tensorflow.org/2020/07/accelerating-tensorflow-lite-xnnpack-integration.html
@@ -108,6 +110,7 @@ class MainActivity : AppCompatActivity() {
         if (extras != null) {
             val value = extras!!.getString("key")
             handeler.setDirectory(value)
+
             //The key argument here must match that used in the other activity
         }
 
